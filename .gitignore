@@ -1,0 +1,139 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Environment Files
+.env
+.env.*
+!.env.example
+env/
+
+# Build output
+dist/
+build/
+out/
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+*.swp
+*.swo
+*.swn
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# MacOS
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# Linux
+*.directory
+
+# Windows
+*.lnk
+
+# Stylelint
+.stylelintcache
+
+# Prettier
+.prettierignore
+.prettierrc
+
+# PHP
+composer.lock
+vendor/
+
+# Ruby
+*.gem
+*.rbenv-vars
+.rbenv-*
+
+# Python
+__pycache__/
+instance/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.class
+*.log
+
+# Go
+bin/
+pkg/
+
+# Rust
+target/
+Cargo.lock
+
+# Miscellaneous
+*.log
+*.tmp
+*.bak
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode
+.vscode/
+.history/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Haskell
+.stack-work/
+.cabal-sandbox/
+*.cabal
+*.hs-bin/
+*.hie
+*.hie.yaml
+
+# Nix
+result/
+*.nix
+nix-shell
+
+# Generic
+*.lock
+*.tmp
+*.swp
+*.swo
+*.swn
+
+# Application-specific
+# Add specific files or folders to ignore for your application here

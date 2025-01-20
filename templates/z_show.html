@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container grid" id="contacts-container">
+        <div id="contacts-list" class="sidebar">{% include '_contact-list.html' %}</div>
+        <div id="details-panel" class="details sample-transition">{% include '_contact-details.html' %}</div>
+    </div>
+{% endblock %}

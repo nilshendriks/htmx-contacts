@@ -1,0 +1,21 @@
+<div id="contacts-list" class="sidebar">
+    {% include 'components/search-form.html' %} {% if not contacts %}
+    <p>No contacts found.</p>
+    {% else %}
+    <ul class="contacts-list">
+        {% for c in contacts %}
+        <li class="{% if c.id == contact.id %}selected{% endif %}">
+            <a
+                href="/contacts/{{ c.id }}"
+                xhx-get="/contacts/{{ c.id }}"
+                xhx-target="#contacts-container"
+                xhx-swap="outerHTML"
+                xhx-trigger="click"
+            >
+                <strong>{{ c.first }}</strong> {{ c.last }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>

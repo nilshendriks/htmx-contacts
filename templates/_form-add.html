@@ -1,0 +1,84 @@
+<div id="details-panel" class="details sample-transition">
+    <form action="/contacts/new" method="post" id="add-form">
+        <fieldset>
+            <legend class="visually-hidden">Name</legend>
+            <label for="first_name" class="visually-hidden">First Name</label>
+            <input
+                name="first_name"
+                id="first_name"
+                type="text"
+                placeholder="First Name"
+                value="{{ contact.first or '' }}"
+                required
+                autofocus
+                class="nh-textfield nh-textfield--fieldless h2"
+            />
+            <span class="error">{{ contact.errors['first'] }}</span>
+            <label for="last_name" class="visually-hidden">Last Name</label>
+            <input
+                name="last_name"
+                id="last_name"
+                type="text"
+                placeholder="Last Name"
+                value="{{ contact.last or '' }}"
+                class="nh-textfield nh-textfield--fieldless h2"
+            />
+            <span class="error">{{ contact.errors['last'] }}</span>
+        </fieldset>
+        <fieldset>
+            <label for="email" class="visually-hidden">Email</label>
+            <input
+                name="email"
+                id="email"
+                type="email"
+                placeholder="Email"
+                value="{{ contact.email or '' }}"
+                class="nh-textfield nh-textfield--fieldless"
+            />
+            <span class="error">{{ contact.errors['email'] }}</span>
+        </fieldset>
+        <fieldset>
+            <label for="phone" class="visually-hidden">Phone</label>
+            <input
+                name="phone"
+                id="phone"
+                type="text"
+                placeholder="Phone"
+                value="{{ contact.phone or '' }}"
+                class="nh-textfield nh-textfield--fieldless"
+            />
+            <span class="error">{{ contact.errors['phone'] }}</span>
+        </fieldset>
+    </form>
+    <menu class="tool-bar">
+        <a class="button button--disabled">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="ionicon"
+                viewBox="0 0 512 512"
+            >
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="32"
+                    d="M256 112v288M400 256H112"
+                />
+            </svg>
+        </a>
+        <div class="button-group">
+            <a href="/contacts" class="button">Cancel</a>
+            <button
+                class="button button--primary"
+                type="submit"
+                form="add-form"
+                formaction="/contacts/new"
+                name="button_submit"
+                formmethod="POST"
+            >
+                Save
+            </button>
+        </div>
+    </menu>
+</div>

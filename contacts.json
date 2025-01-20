@@ -1,0 +1,90 @@
+[
+  {
+    "id": 5,
+    "first": "Maude",
+    "last": "Lebowski",
+    "phone": "123-456-7890",
+    "email": "maude@lebowski.com",
+    "errors": {}
+  },
+  {
+    "id": 7,
+    "first": "Jesus",
+    "last": "Quintana",
+    "phone": "123-456-7890",
+    "email": "pederast@bowl.com",
+    "errors": {}
+  },
+  {
+    "id": 11,
+    "first": "Theodore",
+    "last": "Donald Kerabatsos",
+    "phone": "123-456-7890",
+    "email": "stfu@donny.com",
+    "errors": {}
+  },
+  {
+    "id": 13,
+    "first": "Jeffrey",
+    "last": "Lebowski",
+    "phone": "123-456-7890",
+    "email": "dude@lebowski.com",
+    "errors": {}
+  },
+  {
+    "id": 15,
+    "first": "Walter",
+    "last": "Sobchak",
+    "phone": "123-456-7890",
+    "email": "susan.turner@mpcommand.net",
+    "errors": {}
+  },
+  {
+    "id": 19,
+    "first": "The Big",
+    "last": "Lebowski",
+    "phone": "NA",
+    "email": "james.barr@militaryvets.org",
+    "errors": {}
+  },
+  {
+    "id": 20,
+    "first": "The",
+    "last": "Stranger",
+    "phone": "06888",
+    "email": "helen.rodin@citylaw.com",
+    "errors": {}
+  },
+  {
+    "id": 22,
+    "first": "Karl",
+    "last": "Hungus",
+    "phone": "",
+    "email": "karl@hung.com",
+    "errors": {}
+  },
+  {
+    "id": 23,
+    "first": "Nils3",
+    "last": "",
+    "phone": "",
+    "email": "nilshendriks@me.com",
+    "errors": {}
+  },
+  {
+    "id": 24,
+    "first": "Bunny",
+    "last": "",
+    "phone": "",
+    "email": "bunny@bun.com",
+    "errors": {}
+  },
+  {
+    "id": 25,
+    "first": "Brandt",
+    "last": "",
+    "phone": "",
+    "email": "brandt@bran.com",
+    "errors": {}
+  }
+]

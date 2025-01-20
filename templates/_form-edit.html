@@ -1,0 +1,82 @@
+<div id="details-panel" class="details sample-transition">
+    <form action="/contacts/{{ contact.id }}/edit" method="post" id="edit-form">
+        <fieldset>
+            <legend class="visually-hidden">Contact Values</legend>
+            <label for="first_name" class="visually-hidden">First Name</label>
+            <input
+                name="first_name"
+                id="first_name"
+                class="nh-textfield nh-textfield--fieldless h2"
+                type="text"
+                placeholder="First Name"
+                value="{{ contact.first }}"
+                autofocus
+            />
+            <span class="error">{{ contact.errors['first'] }}</span>
+            <label for="last_name" class="visually-hidden">Last Name</label>
+            <input
+                name="last_name"
+                id="last_name"
+                class="nh-textfield nh-textfield--fieldless h2"
+                type="text"
+                placeholder="Last Name"
+                value="{{ contact.last }}"
+            />
+            <span class="error">{{ contact.errors['last'] }}</span>
+        </fieldset>
+        <fieldset>
+            <label for="email" class="visually-hidden">Email</label>
+            <input
+                name="email"
+                id="email"
+                class="nh-textfield nh-textfield--fieldless"
+                type="email"
+                placeholder="Email"
+                value="{{ contact.email }}"
+                required
+                hx-get="/contacts/{{ contact.id }}/email"
+                hx-target="next .error"
+                hx-trigger="change, keyup delay:200ms changed"
+            />
+            <span class="error">{{ contact.errors['email'] }}</span>
+        </fieldset>
+        <fieldset>
+            <label for="phone" class="visually-hidden">Phone</label>
+            <input
+                name="phone"
+                id="phone"
+                class="nh-textfield nh-textfield--fieldless"
+                type="text"
+                placeholder="Phone"
+                value="{{ contact.phone }}"
+            />
+            <span class="error">{{ contact.errors['phone'] }}</span>
+        </fieldset>
+    </form>
+
+    <menu class="tool-bar">
+        <form action="/contacts/{{ contact.id }}/delete" method="post">
+            <button
+                id="delete-btn"
+                xhx-delete="/contacts/{{ contact.id }}"
+                xhx-confirm="Are you sure you want to delete this contact?"
+                xhx-swap="innerHTML"
+                xhx-target="#contacts-container"
+                class="button button--danger"
+            >
+                Delete Contact
+            </button>
+        </form>
+        <div class="button-group">
+            <a href="/contacts/{{ contact.id }}" class="button">Cancel</a>
+            <button
+                class="button button--primary"
+                type="submit"
+                form="edit-form"
+                xhx-trigger="click"
+            >
+                Save
+            </button>
+        </div>
+    </menu>
+</div>

@@ -1,0 +1,57 @@
+{% extends 'layout.html' %} {% block content %}
+
+<form action="/contacts" method="get" class="tool-bar">
+  <label for="search">Search Term</label>
+  <input
+    id="search"
+    type="search"
+    name="q"
+    value="{{ request.args.get('q') or '' }}"
+  />
+  <!-- <img -->
+  <!--   style="height: 20px" -->
+  <!--   id="spinner" -->
+  <!--   class="htmx-indicator" -->
+  <!--   src="/static/img/spinning-circles.svg" -->
+  <!-- /> -->
+  <input type="submit" value="Search" class="button" />
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+    <tr>
+      <td>{{ contact.first }}</td>
+      <td>{{ contact.last }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.email }}</td>
+      <td>
+        <a href="/contacts/{{ contact.id }}/edit">Edit</a
+        ><a href="/contacts/{{ contact.id }}">View</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div class="button-group">
+    {% if page > 1 %}
+    <a class="button" href="/contacts?page={{ page - 1 }}">Previous</a>
+    {% endif %}
+    {% if contacts|length == 5 %}
+    <a class="button" href="/contacts?page={{ page + 1 }}">Next</a>
+    {% endif %}
+</div>
+
+<p><a href="/contacts/new">Add Contact</a></p>
+
+{% endblock %}

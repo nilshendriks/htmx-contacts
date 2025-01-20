@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Contact App</title>
+        <link rel="icon" href="/static/img/favicon.ico" />
+        <link rel="stylesheet" href="/static/global.css" />
+
+        <style>
+            @keyframes fade-in {
+                from {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes fade-out {
+                to {
+                    opacity: 0;
+                }
+            }
+
+            @keyframes slide-from-right {
+                from {
+                    transform: translateX(90px);
+                }
+            }
+
+            @keyframes slide-to-left {
+                to {
+                    transform: translateX(-90px);
+                }
+            }
+
+            /* define animations for the old and new content */
+            ::view-transition-old(slide-it) {
+                animation:
+                    180ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+                    600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+            }
+            ::view-transition-new(slide-it) {
+                animation:
+                    420ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+                    600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+            }
+
+            /* tie the view transition to a given CSS class */
+            .sample-transition {
+                view-transition-name: slide-it;
+            }
+        </style>
+
+        <script
+            src="https://unpkg.com/htmx.org@2.0.3"
+            integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body xhx-boost="true">
+        <main>
+            {% for message in get_flashed_messages() %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %} {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
